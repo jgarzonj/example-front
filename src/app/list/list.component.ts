@@ -10,7 +10,7 @@ import { ConnectorService} from '../../services/connector/connector.service'
 export class ListComponent implements OnInit {
 
   constructor(private connector:ConnectorService) {
-     
+    
     
   }
 
