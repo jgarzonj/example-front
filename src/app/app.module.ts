@@ -8,12 +8,17 @@ import { UserComponent } from '../app/user/user.component'
 import { ListComponent } from '../app/list/list.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ConnectorService } from '../services/connector/connector.service'
+//import { FormsModule } from '@angular/forms';
 
 import { Http, Headers, Response, RequestOptions ,HttpModule } from '@angular/http'
 
 const appRoutes: Routes = [
   { path: 'lista/:page', component: ListComponent },
-  { path: 'usuario',      component: UserComponent }
+  { path: 'revista',      component: UserComponent },
+  { path: 'lista', redirectTo: '/lista/1',
+    pathMatch: 'full'},
+  { path: '', redirectTo: '/revista',
+    pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -25,6 +30,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpModule,
+    //FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
