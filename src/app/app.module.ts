@@ -9,6 +9,8 @@ import { ListComponent } from '../app/list/list.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ConnectorService } from '../services/connector/connector.service'
 
+import { Http, Headers, Response, RequestOptions ,HttpModule } from '@angular/http'
+
 const appRoutes: Routes = [
   { path: 'lista/:page', component: ListComponent },
   { path: 'usuario',      component: UserComponent }
@@ -22,7 +24,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    HttpModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
