@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ConnectorService} from '../../services/connector/connector.service'
 
 @Component({
   selector: 'app-list',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private connector:ConnectorService) {
+     
+    
+  }
 
   ngOnInit() {
   }
