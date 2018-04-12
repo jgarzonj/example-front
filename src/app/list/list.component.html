@@ -8,7 +8,43 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 </head>
 <body>
-  <h1>{{ title }}</h1>
+  <div class="container">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Autor</th>
+                <th scope="col">pdf</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of list">
+                <th scope="row">{{item.id}}</th>
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.author}}</td>
+                <td><a target="_blank" href="https://example-gems-juligarji.c9users.io/books/{{item.id}}.pdf" class="btn btn-info" role="button">PDF</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item" *ngIf="this.page > 1"><a class="page-link" href="/lista/{{ this.page - 1 }}">Anterior</a></li>
+              <li class="page-item" *ngFor="let current of pages"><a class="page-link" href="/lista/{{current}}">{{current}}</a></li>
+              <li class="page-item"><a class="page-link" href="/lista/{{ this.page + 1 }}">Siguiente</a></li>
+            </ul>
+          </nav>
+        </div>
+  </div>
+ 
+  
+  
+
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
